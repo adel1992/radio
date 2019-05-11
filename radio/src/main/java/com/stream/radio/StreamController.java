@@ -15,7 +15,7 @@ public class StreamController {
 
 	@GetMapping("/getStreaming")
 	void getStreaming(HttpServletResponse response) throws MalformedURLException, IOException{
-		response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
+		response.setContentType("audio/mpeg");
 		IOUtils.copy(RadioConnector.getRadioStream("http://radio.mosaiquefm.net:8000/mosalive"), response.getOutputStream());
 	}
 	
